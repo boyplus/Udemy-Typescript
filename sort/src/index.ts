@@ -1,34 +1,14 @@
-class Sorter{
+import { NumbersCollection } from './NumbersCollection';
+import { CharactersCollection } from './CharactersCollection';
+import { Sorter } from './Sorter'
 
-  constructor(public collection: number[] | string){}
+// const numersCollection = new NumbersCollection([10,3,-5,0]);
+// const sorter = new Sorter(numersCollection);
+// sorter.sort();
+// console.log(sorter.collection);
 
-  sort(): void{
-    const { length } = this.collection;
 
-    for(let i = 0; i < length; i++){
-      for(let j = 0; j < length-i-1; j++){
-
-        //If collection is an array of numbers
-        if(this.collection instanceof Array){
-          // collection === number[]
-          if(this.collection[j] > this.collection[j+1]){
-            const temp = this.collection[j];
-            this.collection[j] = this.collection[j+1];
-            this.collection[j+1] = temp;
-          }
-        }
-
-        //If collection is a string, do this logic instead
-        // ~~~logic to compare and swap character in a string
-        if(typeof this.collection === 'string'){
-          
-        }
-      }
-    }
-  }
-
-}
-
-const sorter = new Sorter([10,3,-5,0]);
+const charactersCollection = new CharactersCollection('Xaayb');
+const sorter = new Sorter(charactersCollection);
 sorter.sort();
 console.log(sorter.collection);
