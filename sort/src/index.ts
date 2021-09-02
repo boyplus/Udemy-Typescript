@@ -1,3 +1,5 @@
+//This command use to install type definition of library
+//npm install types/{library_name}
 import { NumbersCollection } from './NumbersCollection';
 import { CharactersCollection } from './CharactersCollection';
 import { LinkedList } from './LinkedList';
