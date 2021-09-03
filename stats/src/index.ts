@@ -1,16 +1,10 @@
-import fs from 'fs';
+import { MatchReader } from "./MatchReader";
+import { MatchResult } from "./MatchResult";
 
-const matches = fs.readFileSync('football.csv',{
-  encoding: 'utf-8',
-}).split('\n').map((row: string): string[] =>{
-  return row.split(',');
-});
-
-enum MatchResult {
-  HomeWin ='H',
-  AwayWin = 'A',
-  Draw = 'D',
-};
+const reader = new MatchReader('football.csv');
+reader.read();
+const dateOfFirstMatch = reader.data[0][0];
+const matches = reader.data;
 
 let manUnitedWins = 0;
 
